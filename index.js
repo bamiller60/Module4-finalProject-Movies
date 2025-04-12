@@ -8,14 +8,10 @@ function openMenu() {
 
  function changeIcon() {
     const iconWrapper = document.querySelector(".btn");
+    iconWrapper.innerHTML = `<i class="fa-solid fa-spinner"></i>`;
+    
+    iconWrapper.addEventListener('click', () => {
+        iconWrapper.classList.add('btn__loading');
+     })
+ }
 
-    iconWrapper.classList += ' '
-    if (icon.classList.contains("fa-magnifying-glass")) {
-        icon.classList.remove("fa-magnifying-glass");
-        icon.classList.add("fa-spinner");
-    } 
-    //else {
-    //    icon.classList.remove("fa-heart");
-    //    icon.classList.add("fa-star");
-    //}
-}

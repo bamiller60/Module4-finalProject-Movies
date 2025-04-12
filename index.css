@@ -297,17 +297,21 @@ height: 50vh;
 }
 
 .btn:active {
-  transform: scale(95%)
+  transform: scale(95%);
+  background-color: #000;
+}
+
+.btn__loading {
+  background-color: #606266;
+}
+
+.btn__loading:hover {
+  background-color: #242424;
 }
 
 .fa-magnifying-glass {
   font-size: 40px;
   font-weight: bold;
-}
-
-.btn__loading {
-display: none;
-background-color: #242424;
 }
 
 .fa-spinner {
