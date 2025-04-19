@@ -7,11 +7,12 @@ function openMenu() {
  }
 
  function changeIcon() {
-    const iconWrapper = document.querySelector(".btn");
-    iconWrapper.innerHTML = `<i class="fa-solid fa-spinner"></i>`;
-    
-    iconWrapper.addEventListener('click', () => {
-        iconWrapper.classList.add('btn__loading');
-     })
- }
+     const iconWrapper = document.querySelector(".btn");
+     
+     
+     iconWrapper.addEventListener('click', () => {
+         iconWrapper.classList.add('btn__loading');
+        })
+        iconWrapper.innerHTML = `<i class="fa-solid fa-spinner"></i>`;
+    }
 

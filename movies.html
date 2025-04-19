@@ -1,64 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movies</title>
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./index.css" />
     <script src="./index.js" defer></script>
+    <script src="./movies.js" defer></script>
     <script
       src="https://kit.fontawesome.com/ced8c5a454.js"
       crossorigin="anonymous"
     ></script>
-</head>
-<body>
-  <section id="landing">
-    <nav>
-      <div class="nav__container">
-        <div class="logo__wrapper">
-          <img
-            class="logo"
-            src="./assets/movie-hub-high-resolution-logo (1).png"
-            alt=""
-          />
+  </head>
+  <body>
+    <div id="landing">
+      <nav id="navbar">
+        <div class="nav__wrapper">
+          <div class="logo__wrapper">
+            <img
+              class="logo"
+              src="./assets/movie-hub-high-resolution-logo (1).png"
+              alt=""
+            />
+          </div>
+          <ul class="nav__links">
+            <li>
+              <a
+                href="./index.html"
+                class="nav__link nav__link--home link__hover-effect link__hover-effect--red"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="./movies.html"
+                class="nav__link nav__link--movies link__hover-effect link__hover-effect--white"
+                >Explore Movies</a
+              >
+            </li>
+            <li>
+              <a href="#" class="nav__link nav__link--primary">CONTACT</a>
+            </li>
+          </ul>
+          <button class="btn__menu" onclick="openMenu('')">
+            <i class="fa-solid fa-grip-vertical"></i>
+          </button>
         </div>
-        <ul class="nav__links">
-          <li>
-            <a
-              href="./index.html"
-              class="nav__link nav__link--home link__hover-effect link__hover-effect--red"
-              >Home</a
-            >
-          </li>
-          <li>
-            <a
-              href="./movies.html"
-              class="nav__link link__hover-effect link__hover-effect--black"
-              >Explore Movies</a
-            >
-          </li>
-          <li>
-            <a href="#" class="nav__link nav__link--primary">CONTACT</a>
-          </li>
-        </ul>
-        <button class="btn__menu" onclick="openMenu('')">
-          <i class="fa-solid fa-grip-vertical"></i>
-        </button>
-      </div>
-    </nav>
-    <div class="modal">
-      <button class="btn__menu btn__menu--close" onclick="closeMenu('')">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-      <div class="modal__links">
-        <a href="./index.html" class="modal__link">Home</a>
-        <a href="#" class="modal__link">Explore Movies</a>
-        <a href="#" class="modal__link">Contact</a>
-      </div>
+        <div class="modal">
+          <button class="btn__menu btn__menu--close" onclick="closeMenu('')">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <div class="modal__links">
+            <a href="./index.html" class="modal__link">Home</a>
+            <a href="./movies.html" class="modal__link">Explore Movies</a>
+            <a href="#" class="modal__link">Contact</a>
+          </div>
+        </div>
+        <div class="nav__content">
+          <h1 class="title__browse">Browse movie info</h1>
+          <div class="input__wrapper">
+            <input type="text" placeholder="Search by Title, Year, or Type" />
+            <div class="search__wrapper">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+          </div>
+        </div>
+        <div class="overlay"></div>
+      </nav>
+
+      <section id="search">
+        <div class="progress-bar indeterminate">
+<div class="progress-bar__track"></div>
+<div class="progress-bar__fill"></div>
+<div class="progress-bar__buffer"></div>
+        </div>
+        <div id="filter">
+          <h2 class="search__info">Search results:</h2>
+          <div class="movie__filter">
+            <h3>Movie Title: &nbsp  <span id="range1">
+              <span class="text__red">A</span>
+          </span>
+          <span> &dash; </span>
+          <span id="range2">
+              <span class="text__red">Z</span>
+          </span></h3>
+            
+            
+              <div class="dual-slider">
+                  <div class="slider-track"></div>
+                  <input type="range" min="0" max="26" value="0" id="slider-1" oninput="slideOne()">
+                  <input type="range" min="0" max="26" value="26" id="slider-2" oninput="slideTwo()">
+              </div>
+         
+            
+          </div>
+        </div>
+        <div id="movies">
+          <div class="movies__wrapper">
+            <div class="loading__state">
+              <i class="fa-solid fa-spinner"></i>
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="user-list">
+                  <div class="user">
+                    <div class="user-card">
+                      <div class="user-card__container">
+                        <h3>Title</h3>
+                        <p>
+                          <b>Poster:</b>
+                          <a href="https://website.website" target="_blank"
+                            >Poster Link</a
+                          >
+                        </p>
+                        <p><b>Year:</b> XXXX</p>
+                        <p><b>Type:</b> Movie</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-  <div class="content__wrapper">
-    <h1>Browse movie info</h1>
-  </div>
-</body>
+  </body>
 </html>
