@@ -7,6 +7,7 @@
     <title>Movies - Home</title>
     <link rel="stylesheet" href="./index.css" />
     <script src="./index.js" defer></script>
+    <script src="./movies.js" defer></script>
     <script
       src="https://kit.fontawesome.com/ced8c5a454.js"
       crossorigin="anonymous"
@@ -69,11 +70,11 @@
               <span class="text__red">Movie Hub!</span>
             </h2>
             <div class="search__container">
-              <input
+              <input id="searchbar" 
                 type="text"
-                placeholder="Search by Title, Year, or Type"
+                placeholder="Search by Title or Keyword" onchange="searchMovies(searchTerm)"
               />
-              <button class="btn" onclick="changeIcon()">
+              <button class="btn" onclick="changeIcon(); click()" type="submit" >
                 <i class="fa-solid fa-magnifying-glass"></i>
               </button>
             </div>

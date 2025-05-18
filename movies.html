@@ -60,7 +60,12 @@
         <div class="nav__content">
           <h1 class="title__browse">Browse movie info</h1>
           <div class="input__wrapper">
-            <input type="text" placeholder="Search by Title, Year, or Type" />
+            <input
+              onchange="searchMovies(event)"
+              type="text"
+              placeholder="Search by Title or Keyword"
+              class="movie__name"
+            />
             <div class="search__wrapper">
               <i class="fa-solid fa-magnifying-glass"></i>
             </div>
@@ -71,55 +76,28 @@
 
       <section id="search">
         <div class="progress-bar indeterminate">
-<div class="progress-bar__track"></div>
-<div class="progress-bar__fill"></div>
-<div class="progress-bar__buffer"></div>
+          <div class="progress-bar__track"></div>
+          <div class="progress-bar__fill"></div>
+          <div class="progress-bar__buffer"></div>
         </div>
         <div id="filter">
-          <h2 class="search__info">Search results:</h2>
-          <div class="movie__filter">
-            <h3>Movie Title: &nbsp  <span id="range1">
-              <span class="text__red">A</span>
-          </span>
-          <span> &dash; </span>
-          <span id="range2">
-              <span class="text__red">Z</span>
-          </span></h3>
-            
-            
-              <div class="dual-slider">
-                  <div class="slider-track"></div>
-                  <input type="range" min="0" max="26" value="0" id="slider-1" oninput="slideOne()">
-                  <input type="range" min="0" max="26" value="26" id="slider-2" oninput="slideTwo()">
-              </div>
-         
-            
-          </div>
+          <h3 class="filter__title">
+            Search results for: <span class="search__term"> </span>
+          </h3>
+          <select id="movie__filter" onchange="filterMovies(event)">
+            <option value="" disabled selected>Sort by Year</option>
+            <option value="oldest">Year, Oldest to Newest</option>
+            <option value="newest">Year, Newest to Oldest</option>
+          </select>
         </div>
-        <div id="movies">
-          <div class="movies__wrapper">
-            <div class="loading__state">
-              <i class="fa-solid fa-spinner"></i>
-            </div>
-            <div class="container">
-              <div class="row">
-                <div class="user-list">
-                  <div class="user">
-                    <div class="user-card">
-                      <div class="user-card__container">
-                        <h3>Title</h3>
-                        <p>
-                          <b>Poster:</b>
-                          <a href="https://website.website" target="_blank"
-                            >Poster Link</a
-                          >
-                        </p>
-                        <p><b>Year:</b> XXXX</p>
-                        <p><b>Type:</b> Movie</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+      </section>
+
+      <section id="movies__main">
+        <div class="container">
+          <div class="row">
+            <div class="movie-list">
+              <div class="movies">
+                <i class="fa-solid fa-spinner movies__loading--spinner"></i>                  
               </div>
             </div>
           </div>
